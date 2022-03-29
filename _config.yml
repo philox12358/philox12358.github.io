@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: Jason的小站
+subtitle: '这里是subtitle'
+description: '这里是description'
 keywords:
-author: John Doe
+author: Jason Cheng
 language: zh-CN
 timezone: ''
 
@@ -105,3 +105,21 @@ deploy:
   repository: https://github.com/philox12358/philox12358.github.io.git
   type: 'git'
   branch: main
+
+# 增加搜索功能
+search:
+  path: search.xml
+  field: post
+
+# 增加转发拼音链接
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
+
+# 增加emoji表情支持
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
