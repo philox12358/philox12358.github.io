@@ -311,7 +311,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/./images/git_and_github.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://statics.sh1a.qingstor.com/2018/10/15/code.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -470,7 +470,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    753
+                    762
                 </div>
                 
 
@@ -492,6 +492,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -499,56 +502,101 @@
             <div id="articleContent">
                 <h3 id="O、版本控制"><a href="#O、版本控制" class="headerlink" title="O、版本控制"></a>O、版本控制</h3><ul>
 <li><p>分支：branch</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git branch -a          <span class="comment"># 查看分支</span></span><br><span class="line">git switch -c dev      <span class="comment"># 创建并切换到分支     git branch &lt;name&gt; 也可创建分支</span></span><br><span class="line">git switch dev         <span class="comment"># 切换分支</span></span><br><span class="line">git merge dev          <span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">git branch -d dev      <span class="comment"># 删除本地分支</span></span><br><span class="line">git push gitee --delete dev    <span class="comment"># 删除云端分支</span></span><br><span class="line">git <span class="built_in">log</span> --graph        <span class="comment"># 查看分支合并图</span></span><br><span class="line">git status             <span class="comment"># 查看状态</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git branch -a          # 查看分支
+git switch -c dev      # 创建并切换到分支     git branch &lt;name&gt; 也可创建分支
+git switch dev         # 切换分支
+git merge dev          # 合并指定分支到当前分支
+git branch -d dev      # 删除本地分支
+git push gitee --delete dev    # 删除云端分支
+git log --graph        # 查看分支合并图
+git status             # 查看状态<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>标签：tag</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git tag                 <span class="comment"># 查看所有标签</span></span><br><span class="line">git tag v1.0            <span class="comment"># 创建标签</span></span><br><span class="line">git tag -d v0.1         <span class="comment"># 删除标签</span></span><br><span class="line">git tag v0.9 f52c633    <span class="comment"># 按照历史提交创建标签</span></span><br><span class="line">git show v0.9           <span class="comment"># 查看标签信息</span></span><br><span class="line">git tag -a v0.1 -m <span class="string">"version 0.1 released"</span> 1094adb      <span class="comment"># 创建时指定标签信息</span></span><br><span class="line">git push origin v1.0    <span class="comment"># 推送某个标签</span></span><br><span class="line">git push origin --tags  <span class="comment"># 推送所有标签</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git tag                 # 查看所有标签
+git tag v1.0            # 创建标签
+git tag -d v0.1         # 删除标签
+git tag v0.9 f52c633    # 按照历史提交创建标签
+git show v0.9           # 查看标签信息
+git tag -a v0.1 -m "version 0.1 released" 1094adb      # 创建时指定标签信息
+git push origin v1.0    # 推送某个标签
+git push origin --tags  # 推送所有标签<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>建立仓库联系</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote -v           <span class="comment"># 查看远程仓库连接</span></span><br><span class="line">git remote <span class="built_in">rm</span> origin    <span class="comment"># 删除远程仓库连接</span></span><br><span class="line">git remote add github git@github.com:                      <span class="comment"># 增加连接</span></span><br><span class="line">git remote add gitee git@gitee.com:                        <span class="comment"># 增加连接</span></span><br><span class="line">git push github/gitee master                               <span class="comment"># push操作</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git remote -v           # 查看远程仓库连接
+git remote rm origin    # 删除远程仓库连接
+git remote add github git@github.com:                      # 增加连接
+git remote add gitee git@gitee.com:                        # 增加连接
+git push github/gitee master                               # push操作<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>创建别名</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.ci commit             <span class="comment"># 把commit换成ci</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git config --global alias.ci commit             # 把commit换成ci<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>工作区</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git status             <span class="comment"># 查看暂存区</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git status             # 查看暂存区
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>移动文件</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv oldname newname      # 移动文件</span><br><span class="line">git add newname         # 增加新文件</span><br><span class="line">git rm oldname          # 删除旧文件</span><br></pre></td></tr></tbody></table></figure></li>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mv oldname newname      # 移动文件
+git add newname         # 增加新文件
+git rm oldname          # 删除旧文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h3 id="一、日常使用"><a href="#一、日常使用" class="headerlink" title="一、日常使用"></a>一、日常使用</h3><h5 id="1、克隆"><a href="#1、克隆" class="headerlink" title="1、克隆"></a>1、克隆</h5><ul>
 <li><p>把项目复制到本地</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/philox12358/Jason-Research.git         <span class="comment"># http克隆</span></span><br><span class="line">git <span class="built_in">clone</span> git@github.com:philox12358/Jason-Research.git             <span class="comment"># ssh克隆(更好用)</span></span><br></pre></td></tr></tbody></table></figure></li>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git clone https://github.com/philox12358/Jason-Research.git         # http克隆
+git clone git@github.com:philox12358/Jason-Research.git             # ssh克隆(更好用)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 </ul>
 <h5 id="2、提交"><a href="#2、提交" class="headerlink" title="2、提交"></a>2、提交</h5><ul>
 <li><p>0、<strong>更新</strong>云端文件到本地：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git pull origin main<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>1、Git操作即可</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git add -A                                       <span class="comment"># 先修改文件，后更新暂存区</span></span><br><span class="line">git commit -m <span class="string">"web"</span>                      <span class="comment"># 设置提交信息</span></span><br><span class="line">git push --set-upstream origin master              <span class="comment"># 推送云端</span></span><br><span class="line"></span><br><span class="line">git push --set-upstream github master</span><br><span class="line">                     <span class="comment"># 云端名字  本地分支名字</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git add -A                                       # 先修改文件，后更新暂存区
+git commit -m "web"                      # 设置提交信息
+git push --set-upstream origin master              # 推送云端
+
+git push --set-upstream github master
+                     # 云端名字  本地分支名字<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>2、git pull</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master            # 远程分支是与当前分支合并</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git pull origin master            # 远程分支是与当前分支合并<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>​</p>
 </li>
 </ul>
 <h5 id="3、合并"><a href="#3、合并" class="headerlink" title="3、合并"></a>3、合并</h5><ul>
 <li><p>依次点击以下按键</p>
-<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">compare &amp; pull request</span><br><span class="line">create pull request</span><br><span class="line">merge pull request ——（This branch has no conflicts with the base branch）</span><br><span class="line">confirm merge</span><br><span class="line">Pull request successfully merged and closed     <span class="comment"># 成功</span></span><br></pre></td></tr></tbody></table></figure></li>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">compare &amp; pull request
+create pull request
+merge pull request ——（This branch has no conflicts with the base branch）
+confirm merge
+Pull request successfully merged and closed     # 成功<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h3 id="二、配置Git和GitHub的连接"><a href="#二、配置Git和GitHub的连接" class="headerlink" title="二、配置Git和GitHub的连接"></a>二、配置Git和GitHub的连接</h3><h5 id="1、本地Git配置绑定远程Github账户"><a href="#1、本地Git配置绑定远程Github账户" class="headerlink" title="1、本地Git配置绑定远程Github账户"></a>1、本地Git配置绑定远程Github账户</h5><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"philox12358"</span></span><br><span class="line">git config --global user.email philox12358@163.com   <span class="comment"># 添加本地账户信息</span></span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"philox12358@163.com"</span>           <span class="comment"># 生成密匙</span></span><br><span class="line">去对应文件夹把“id_rsa.pub”文件的内容复制</span><br><span class="line">到自己的github当中的设置里面创建新的SSH key，输入刚才复制的密匙即可。</span><br><span class="line"></span><br><span class="line">ssh -T git@github.com                      //git中输入此代码验证连接</span><br><span class="line">ssh -T -p 443 git@ssh.github.com           //使用指定端口验证连接</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="二、配置Git和GitHub的连接"><a href="#二、配置Git和GitHub的连接" class="headerlink" title="二、配置Git和GitHub的连接"></a>二、配置Git和GitHub的连接</h3><h5 id="1、本地Git配置绑定远程Github账户"><a href="#1、本地Git配置绑定远程Github账户" class="headerlink" title="1、本地Git配置绑定远程Github账户"></a>1、本地Git配置绑定远程Github账户</h5><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">git config --global user.name "philox12358"
+git config --global user.email philox12358@163.com   # 添加本地账户信息
+
+ssh-keygen -t rsa -C "philox12358@163.com"           # 生成密匙
+去对应文件夹把“id_rsa.pub”文件的内容复制
+到自己的github当中的设置里面创建新的SSH key，输入刚才复制的密匙即可。
+
+ssh -T git@github.com                      //git中输入此代码验证连接
+ssh -T -p 443 git@ssh.github.com           //使用指定端口验证连接<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h3 id="三、解决Git相关的问题"><a href="#三、解决Git相关的问题" class="headerlink" title="三、解决Git相关的问题"></a>三、解决Git相关的问题</h3><h5 id="1、fatal-unable-to-access-‘https-github-com-git-39"><a href="#1、fatal-unable-to-access-‘https-github-com-git-39" class="headerlink" title="1、fatal: unable to access ‘https://github.com/.../.git'"></a>1、fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/.../.git'">https://github.com/.../.git'</a></h5><p>只需要在命令行中执行</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global git.proxy 127.0.0.1:10080</span><br><span class="line">git config --global http.proxy 127.0.0.1:10080</span><br><span class="line">git config --global https.proxy 127.0.0.1:10080</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">git config --global git.proxy 127.0.0.1:10080
+git config --global http.proxy 127.0.0.1:10080
+git config --global https.proxy 127.0.0.1:10080<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="2、git-push失败"><a href="#2、git-push失败" class="headerlink" title="2、git push失败"></a>2、git push失败</h5><p>重新绑定网上的仓库地址，或者换gitee</p>
 <h5 id="3、Could-not-read-from-remote-repository"><a href="#3、Could-not-read-from-remote-repository" class="headerlink" title="3、Could not read from remote repository."></a>3、Could not read from remote repository.</h5><blockquote>
 <p>git remote –v</p>
 </blockquote>
-<h5 id="4、重装node出现问题"><a href="#4、重装node出现问题" class="headerlink" title="4、重装node出现问题"></a>4、重装node出现问题</h5><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="4、重装node出现问题"><a href="#4、重装node出现问题" class="headerlink" title="4、重装node出现问题"></a>4、重装node出现问题</h5><pre class="line-numbers language-none"><code class="language-none">ssh: connect to host github.com port 22: Connection timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解决办法：</p>
 <blockquote>
@@ -806,7 +854,7 @@
                 <a href="/2022/03/29/006-git/">
                     <div class="card-image">
                         
-                        <img src="/./images/git_and_github.jpg" class="responsive-img" alt="Git简单使用">
+                        <img src="https://statics.sh1a.qingstor.com/2018/10/15/code.jpg" class="responsive-img" alt="Git简单使用">
                         
                         <span class="card-title">Git简单使用</span>
                     </div>
@@ -1070,7 +1118,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">826</span>
+                        class="white-color">835</span>
             
             
             
